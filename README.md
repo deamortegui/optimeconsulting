@@ -1,78 +1,45 @@
-Symfony Standard Edition
-========================
+Realizar un Crud de Productos
 
-**WARNING**: This distribution does not support Symfony 4. See the
-[Installing & Setting up the Symfony Framework][15] page to find a replacement
-that fits you best.
+La idea es realizar dos CRUD (create, read, update, delete) uno de productos y y el otro de categoría de productos en PHP, utilizando el Framework Symfony en su versión 2.8 o superior (Symfony 3.x o 4.x preferiblemente). Manejar la Base de Datos en Mysql o en SQLite. Además apreciamos que nos envíen el código usando un repositorio de Github.
 
-Welcome to the Symfony Standard Edition - a fully-functional Symfony
-application that you can use as the skeleton for your new applications.
+Por favor no usar los comandos de symfony de creación de crud para efectos de este ejercicio.
 
-For details on how to download and get started with Symfony, see the
-[Installation][1] chapter of the Symfony Documentation.
+Datos de los productos: id (entero), codigo (string), nombre (string), descripcion (string), marca (string), categoría (relación con la categoría de productos), precio  (float).
+Datos de las categorías de productos: id  (entero), codigo (string), nombre (string), descripcion (string), activo (booleano).
 
-What's inside?
---------------
+Validaciones de los Productos:
 
-The Symfony Standard Edition is configured with the following defaults:
+• Todos los campos son obligatorios.
+• El nombre y el código no pueden repetirse.
+• El código no puede contener caracteres especiales ni espacios
+• El código debe tener mínimo 4 caracteres y máximo 10.
+• El nombre debe contener mínimo 4 caracteres.
+• El precio debe ser un número válido.
 
-  * An AppBundle you can use to start coding;
+Validaciones de las Categorías de productos:
 
-  * Twig as the only configured template engine;
+• Todos los campos son obligatorios.
+• El nombre y el codigo no pueden repetirse.
+• El código no puede contener caracteres especiales ni espacios.
+• El nombre debe contener mínimo 2 caracteres.
 
-  * Doctrine ORM/DBAL;
+La aplicación debe Permitir:
 
-  * Swiftmailer;
+• Listar productos, solo mostrar los productos de categorías de producto activas. (Paginar los productos es un Plus o Adicional).
+• Filtrar productos.
+• Ordenar por columna (Opcional, es un plus).
+• Crear Productos (Solo deben poder seleccionarse categorías activas al crear productos).
+• Editar Productos  (Solo deben poder seleccionarse categorías activas al editar productos).
+• Eliminar Productos (El usuario debe confirmar esta acción, es decir, se le debe preguntar al usuario si está seguro de que desea eliminar el producto).
+• Listar Categorías de productos.
+• Crear Categoría de Producto.
+• Editar Categoría de Producto.
+• Acción de Activar Categoría de Producto.
+• Acción de Desactivar Categoría de Producto.Trabajar con bootstrap css o cualquier otro. 
 
-  * Annotations enabled for everything.
+Adicionalmente (No es requerido) sería interesante contar con los siguientes Test:
 
-It comes pre-configured with the following bundles:
 
-  * **FrameworkBundle** - The core Symfony framework bundle
+• Crear tests (unitarios o de integracion) para los servicios que creen.
+• Crear tests (unitarios o integración) de las validaciones de las entidades.
 
-  * [**SensioFrameworkExtraBundle**][6] - Adds several enhancements, including
-    template and routing annotation capability
-
-  * [**DoctrineBundle**][7] - Adds support for the Doctrine ORM
-
-  * [**TwigBundle**][8] - Adds support for the Twig templating engine
-
-  * [**SecurityBundle**][9] - Adds security by integrating Symfony's security
-    component
-
-  * [**SwiftmailerBundle**][10] - Adds support for Swiftmailer, a library for
-    sending emails
-
-  * [**MonologBundle**][11] - Adds support for Monolog, a logging library
-
-  * **WebProfilerBundle** (in dev/test env) - Adds profiling functionality and
-    the web debug toolbar
-
-  * **SensioDistributionBundle** (in dev/test env) - Adds functionality for
-    configuring and working with Symfony distributions
-
-  * [**SensioGeneratorBundle**][13] (in dev env) - Adds code generation
-    capabilities
-
-  * [**WebServerBundle**][14] (in dev env) - Adds commands for running applications
-    using the PHP built-in web server
-
-  * **DebugBundle** (in dev/test env) - Adds Debug and VarDumper component
-    integration
-
-All libraries and bundles included in the Symfony Standard Edition are
-released under the MIT or BSD license.
-
-Enjoy!
-
-[1]:  https://symfony.com/doc/3.4/setup.html
-[6]:  https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/index.html
-[7]:  https://symfony.com/doc/3.4/doctrine.html
-[8]:  https://symfony.com/doc/3.4/templating.html
-[9]:  https://symfony.com/doc/3.4/security.html
-[10]: https://symfony.com/doc/3.4/email.html
-[11]: https://symfony.com/doc/3.4/logging.html
-[13]: https://symfony.com/doc/current/bundles/SensioGeneratorBundle/index.html
-[14]: https://symfony.com/doc/current/setup/built_in_web_server.html
-[15]: https://symfony.com/doc/current/setup.html
-"# optimeconsulting" 
